@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PuntoSabor-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e453db4c0c5f138b696c1848ddcb19db1fd1997f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PuntoSabor-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PuntoSabor-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
