@@ -268,7 +268,7 @@ if (!context.Huariques.Any())
             );
         }
 
-        // USERS demo (opcionales)
+        // USERS demo 
         if (!context.Users.Any())
         {
             context.Users.AddRange(
@@ -279,7 +279,7 @@ if (!context.Huariques.Any())
             );
         }
 
-        // REVIEWS (si tu entidad Review tiene exactamente estos campos)
+        // REVIEWS 
         if (!context.Reviews.Any())
         {
             context.Reviews.AddRange(
@@ -293,7 +293,6 @@ if (!context.Huariques.Any())
                 new Review { Id = 8,  HuariqueId = 11, UserId = 2, Rating = 5, Comment = "Don Mario la rompe con su parrillada familiar.",        CreatedAt = DateTime.Parse("2025-11-05T11:50:00Z") },
                 new Review { Id = 9,  HuariqueId = 12, UserId = 4, Rating = 4, Comment = "Brasa y Carbón deliciosa, atención rápida.",            CreatedAt = DateTime.Parse("2025-11-05T19:00:00Z") },
                 new Review { Id = 10, HuariqueId = 10, UserId = 3, Rating = 5, Comment = "Café Central con el mejor espresso.",                   CreatedAt = DateTime.Parse("2025-11-06T08:45:00Z") }
-                // si quieres también las reviews con userId=0 del json, puedes agregarlas aquí igual
             );
         }
 
