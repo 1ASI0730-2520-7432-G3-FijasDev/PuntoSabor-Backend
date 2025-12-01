@@ -7,35 +7,34 @@ namespace PuntoSabor_Backend.Presentation.Controllers;
 
 [ApiController]
 [Route("users")]
-public class UsersController(
-    IUserRepository userRepository,
-    IUnitOfWork unitOfWork) : ControllerBase
+public class UsersController : ControllerBase
 {
-    /// <summary>
-    /// Devuelve usuarios filtrando por email.
-    /// GET /users?email=correo@example.com
-    /// </summary>
+    private readonly IUserRepository _users;
+    private readonly IUnitOfWork _unitOfWork;
+
+    public UsersController(IUserRepository users, IUnitOfWork unitOfWork)
+    {
+        _users = users;
+        _unitOfWork = unitOfWork;
+    }
+
+    /// GET /users?email=demo@puntosabor.com
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> Get(
         [FromQuery] string? email,
         CancellationToken ct)
     {
-        var result = await userRepository.FindByEmailAsync(email, ct);
-        return Ok(result);
+        var result = await _users.FindByEmailAsync(email!, ct);
+        return Ok(result); // 200 + JSON
     }
 
-    /// <summary>
-    /// Registra un nuevo usuario.
     /// POST /users
-    /// </summary>
     [HttpPost]
-    public async Task<ActionResult<User>> Create(
-        [FromBody] User dto,
-        CancellationToken ct)
+    public async Task<ActionResult<User>> Create([FromBody] User dto, CancellationToken ct)
     {
-        await userRepository.AddAsync(dto, ct);   // ⬅️ solo aquí usamos AddAsync
-        await unitOfWork.CompleteAsync(ct);
+        await _users.AddAsync(dto, ct);
+        await _unitOfWork.CompleteAsync(ct);
 
-        return StatusCode(StatusCodes.Status201Created, dto);
+        return CreatedAtAction(nameof(Get), new { email = dto.Email }, dto);
     }
 }
