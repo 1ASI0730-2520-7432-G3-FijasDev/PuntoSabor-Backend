@@ -40,14 +40,14 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// CORS
+// CORS para el frontend en Vite
 const string corsPolicyName = "PuntoSaborCors";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(corsPolicyName, policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173") // Vite
+            .WithOrigins("http://localhost:5173")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -55,11 +55,15 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+    
+    db.Database.EnsureCreated();
+
+    Console.WriteLine(">>> Ejecutando DataSeeder...");
+    DataSeeder.Seed(db);
+    Console.WriteLine(">>> DataSeeder terminado.");
 }
 
 // Swagger
@@ -78,4 +82,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
