@@ -14,12 +14,12 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<User> Users => Set<User>();
-    public DbSet<Category> Categories => Set<Category>();
-    public DbSet<Huarique> Huariques => Set<Huarique>();
-    public DbSet<Promo> Promos => Set<Promo>();
-    public DbSet<Plan> Plans => Set<Plan>();
-    public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<User> Users { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Huarique> Huariques { get; set; }
+    public DbSet<Promo> Promos { get; set; }
+    public DbSet<Plan> Plans { get; set; }
+    public DbSet<Review> Reviews { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
