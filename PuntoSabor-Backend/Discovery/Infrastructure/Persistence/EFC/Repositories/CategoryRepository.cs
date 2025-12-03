@@ -7,7 +7,9 @@ namespace PuntoSabor_Backend.Discovery.Infrastructure.Persistence.EFC.Repositori
 
 public class CategoryRepository(AppDbContext context) : ICategoryRepository
 {
+    
     public async Task<IEnumerable<Category>> ListAsync(CancellationToken ct = default)
+    
     {
         return await context.Categories.AsNoTracking().ToListAsync(ct);
     }

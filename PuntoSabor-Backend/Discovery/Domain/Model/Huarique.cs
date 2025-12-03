@@ -5,10 +5,16 @@ namespace PuntoSabor_Backend.Discovery.Domain.Model;
 public class Huarique : AuditableEntity
 {
     public string Name { get; set; } = null!;
+    
     public string Category { get; set; } = null!;
+    
     public int CategoryId { get; set; }
+    
     public decimal Price { get; set; }
+    
     public double Rating { get; set; }
+    
     public string District { get; set; } = null!;
+    
     public bool Near { get; set; }
 }

@@ -7,7 +7,9 @@ namespace PuntoSabor_Backend.Memberships.Infrastructure.Persistence.EFC.Reposito
 
 public class PlanRepository(AppDbContext context) : IPlanRepository
 {
+    
     public async Task<IEnumerable<Plan>> ListAsync(CancellationToken ct = default)
+    
     {
         return await context.Plans.AsNoTracking().ToListAsync(ct);
     }
