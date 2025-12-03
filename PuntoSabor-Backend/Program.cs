@@ -38,7 +38,10 @@ builder.Services.AddControllers().AddNewtonsoftJson();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.EnableAnnotations();
+});
 
 // CORS para el frontend en Vite
 const string corsPolicyName = "PuntoSaborCors";
@@ -58,7 +61,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    
+
     db.Database.EnsureCreated();
 
     Console.WriteLine(">>> Ejecutando DataSeeder...");

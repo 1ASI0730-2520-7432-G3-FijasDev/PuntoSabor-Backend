@@ -10588,23 +10588,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Andres\\.nuget\\packages\\": {},
+    "C:\\Users\\USUARIO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andres\\RiderProjects\\Backend\\PuntoSabor-Backend\\PuntoSabor-Backend.csproj",
+      "projectUniqueName": "C:\\Users\\USUARIO\\Downloads\\IASI0729-2520-7391\\PuntoSabor-Backend\\PuntoSabor-Backend\\PuntoSabor-Backend.csproj",
       "projectName": "PuntoSabor-Backend",
-      "projectPath": "C:\\Users\\Andres\\RiderProjects\\Backend\\PuntoSabor-Backend\\PuntoSabor-Backend.csproj",
-      "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andres\\RiderProjects\\Backend\\PuntoSabor-Backend\\obj\\",
+      "projectPath": "C:\\Users\\USUARIO\\Downloads\\IASI0729-2520-7391\\PuntoSabor-Backend\\PuntoSabor-Backend\\PuntoSabor-Backend.csproj",
+      "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USUARIO\\Downloads\\IASI0729-2520-7391\\PuntoSabor-Backend\\PuntoSabor-Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10613,7 +10613,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -10632,7 +10631,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
@@ -10728,7 +10727,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
