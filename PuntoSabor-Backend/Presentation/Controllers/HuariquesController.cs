@@ -14,6 +14,7 @@ public class HuariquesController(
     /// <summary>
     /// Busca huariques por texto y/o cercanos.
     /// </summary>
+    
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Huarique>>> GetAll(
         [FromQuery] string? q,
@@ -28,6 +29,7 @@ public class HuariquesController(
     /// Devuelve el detalle de un huarique por id.
     /// GET /huariques/:id
     /// </summary>
+    
     [HttpGet("{id:int}")]
     public async Task<ActionResult<Huarique>> GetById(int id, CancellationToken ct)
     {
@@ -53,6 +55,7 @@ public class HuariquesController(
     /// <summary>
     /// PATCH /huariques/:id
     /// </summary>
+    
     [HttpPatch("{id:int}")]
     public async Task<ActionResult<Huarique>> Patch(
         int id,
