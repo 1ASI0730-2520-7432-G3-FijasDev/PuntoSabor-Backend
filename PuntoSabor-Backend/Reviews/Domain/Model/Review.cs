@@ -2,6 +2,10 @@ using PuntoSabor_Backend.Shared.Domain.Model;
 
 namespace PuntoSabor_Backend.Reviews.Domain.Model;
 
+/// <summary>
+/// Reseña realizada por un usuario a un huarique.
+/// </summary>
+
 public class Review : AuditableEntity
 {
     

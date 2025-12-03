@@ -2,6 +2,10 @@ using PuntoSabor_Backend.Auth.Domain.Model;
 
 namespace PuntoSabor_Backend.Auth.Domain.Repositories;
 
+/// <summary>
+/// Repositorio para gestionar usuarios y consultas por correo.
+/// </summary>
+
 public interface IUserRepository
 {
     

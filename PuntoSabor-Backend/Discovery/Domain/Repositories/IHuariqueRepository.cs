@@ -2,6 +2,10 @@ using PuntoSabor_Backend.Discovery.Domain.Model;
 
 namespace PuntoSabor_Backend.Discovery.Domain.Repositories;
 
+/// <summary>
+/// Repositorio para buscar, obtener y gestionar huariques.
+/// </summary>
+
 public interface IHuariqueRepository
 {
     Task<IEnumerable<Huarique>> SearchAsync(
