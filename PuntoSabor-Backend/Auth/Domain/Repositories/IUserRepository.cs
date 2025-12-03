@@ -4,6 +4,7 @@ namespace PuntoSabor_Backend.Auth.Domain.Repositories;
 
 public interface IUserRepository
 {
+    
     Task<IEnumerable<User>> FindByEmailAsync(
         string? email,
         CancellationToken ct = default);
@@ -11,4 +12,5 @@ public interface IUserRepository
     Task AddAsync(
         User user,
         CancellationToken ct = default);
+    
 }

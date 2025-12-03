@@ -7,11 +7,13 @@ namespace PuntoSabor_Backend.Reviews.Infrastructure.Persistence.EFC.Repositories
 
 public class ReviewRepository(AppDbContext context) : IReviewRepository
 {
+    
     public async Task<IEnumerable<Review>> ListAsync(
         int? huariqueId,
         string? sort,
         string? order,
         CancellationToken ct = default)
+    
     {
         var query = context.Reviews.AsQueryable();
 
