@@ -1,5 +1,11 @@
 namespace PuntoSabor_Backend.Presentation.Resources;
 
+/**
+ * <summary>
+ *     Representación de un huarique para respuestas de la API.
+ * </summary>
+ */
+
 public record HuariqueResource(
     int Id,
     string Name,

@@ -11,11 +11,13 @@ public class ReviewsController(
     IReviewRepository reviews,
     IUnitOfWork unitOfWork) : ControllerBase
 {
-    /// <summary>
-    /// Lista de reviews.
-    /// GET /reviews
-    /// GET /reviews?huariqueId=1&_sort=createdAt&_order=desc
-    /// </summary>
+    /**
+     * <summary>
+     *     Lista de reviews.
+     *     GET /reviews
+     *     GET /reviews?huariqueId=1&_sort=createdAt&_order=desc
+     * </summary>
+     */
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Review>>> GetAll(
         [FromQuery] int? huariqueId,
@@ -27,10 +29,12 @@ public class ReviewsController(
         return Ok(result);
     }
 
-    /// <summary>
-    /// Crea una nueva review.
-    /// POST /reviews
-    /// </summary>
+    /**
+     * <summary>
+     *     Crea una nueva review.
+     *     POST /reviews
+     * </summary>
+     */
     [HttpPost]
     public async Task<ActionResult<Review>> Create(
         [FromBody] Review dto,

@@ -8,9 +8,11 @@ using PuntoSabor_Backend.Reviews.Domain.Model;
 
 namespace PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
-/// <summary>
-/// Pobla la base de datos con datos iniciales para prueba y demo.
-/// </summary>
+/**
+ * <summary>
+ * Pobla la base de datos con datos iniciales para prueba y demo.
+ * </summary>
+ */
 
 public static class DataSeeder
 {
@@ -45,7 +47,7 @@ if (!context.Huariques.Any())
             District = "Surco",
             Near = true
         },
-        
+
         new Huarique {
             Id = 2,
             Name = "Rincón Marino",
@@ -56,7 +58,7 @@ if (!context.Huariques.Any())
             District = "Chorrillos",
             Near = false
         },
-        
+
         new Huarique {
             Id = 3,
             Name = "Doña Peta Criolla",
@@ -67,7 +69,7 @@ if (!context.Huariques.Any())
             District = "Barranco",
             Near = true
         },
-        
+
         new Huarique {
             Id = 4,
             Name = "Chifa San Joy Lao",
@@ -78,7 +80,7 @@ if (!context.Huariques.Any())
             District = "Miraflores",
             Near = false
         },
-        
+
         new Huarique {
             Id = 5,
             Name = "La Dulcería",
@@ -89,7 +91,7 @@ if (!context.Huariques.Any())
             District = "San Isidro",
             Near = false
         },
-        
+
         new Huarique {
             Id = 6,
             Name = "La Esquinita del Menú",
@@ -100,7 +102,7 @@ if (!context.Huariques.Any())
             District = "San Borja",
             Near = true
         },
-        
+
         new Huarique {
             Id = 7,
             Name = "Café Aroma & Sabor",
@@ -111,7 +113,7 @@ if (!context.Huariques.Any())
             District = "Miraflores",
             Near = false
         },
-        
+
         new Huarique {
             Id = 8,
             Name = "Pollos Don Tito",
@@ -122,7 +124,7 @@ if (!context.Huariques.Any())
             District = "La Molina",
             Near = false
         },
-        
+
         new Huarique {
             Id = 9,
             Name = "Mar & Tierra",
@@ -133,7 +135,7 @@ if (!context.Huariques.Any())
             District = "San Miguel",
             Near = true
         },
-        
+
         new Huarique {
             Id = 10,
             Name = "Café Central",
@@ -144,7 +146,7 @@ if (!context.Huariques.Any())
             District = "Centro de Lima",
             Near = false
         },
-        
+
         new Huarique {
             Id = 11,
             Name = "Parrilladas Don Mario",
@@ -155,7 +157,7 @@ if (!context.Huariques.Any())
             District = "Surquillo",
             Near = true
         },
-        
+
         new Huarique {
             Id = 12,
             Name = "Brasa y Carbón",
@@ -166,7 +168,7 @@ if (!context.Huariques.Any())
             District = "Lince",
             Near = false
         },
-        
+
         new Huarique {
             Id = 13,
             Name = "Fuego Criollo",
@@ -177,7 +179,7 @@ if (!context.Huariques.Any())
             District = "San Juan de Miraflores",
             Near = true
         },
-        
+
         new Huarique {
             Id = 14,
             Name = "La Parrilla del Norte",
@@ -188,7 +190,7 @@ if (!context.Huariques.Any())
             District = "Los Olivos",
             Near = false
         },
-        
+
         new Huarique {
             Id = 15,
             Name = "Punto Grill",
@@ -199,7 +201,7 @@ if (!context.Huariques.Any())
             District = "San Isidro",
             Near = false
         },
-        
+
         new Huarique {
             Id = 16,
             Name = "La Picantería Peruana",
@@ -210,7 +212,7 @@ if (!context.Huariques.Any())
             District = "Surquillo",
             Near = true
         },
-        
+
         new Huarique {
             Id = 17,
             Name = "La Casa del Postre",
@@ -221,7 +223,7 @@ if (!context.Huariques.Any())
             District = "Surquillo",
             Near = true
         },
-        
+
         new Huarique {
             Id = 18,
             Name = "Chifa Ping Chung Long",
@@ -232,7 +234,7 @@ if (!context.Huariques.Any())
             District = "Lince",
             Near = false
         },
-        
+
         new Huarique {
             Id = 19,
             Name = "El Sabor Norteño",
@@ -243,7 +245,7 @@ if (!context.Huariques.Any())
             District = "Los Olivos",
             Near = false
         },
-        
+
         new Huarique {
             Id = 20,
             Name = "La Ola Marina",
@@ -254,7 +256,7 @@ if (!context.Huariques.Any())
             District = "Magdalena",
             Near = true
         },
-        
+
         new Huarique {
             Id = 21,
             Name = "Menu Don Lucho",
@@ -292,7 +294,7 @@ if (!context.Huariques.Any())
             );
         }
 
-        // USERS demo 
+        // USERS demo
         if (!context.Users.Any())
         {
             context.Users.AddRange(
@@ -303,7 +305,7 @@ if (!context.Huariques.Any())
             );
         }
 
-        // REVIEWS 
+        // REVIEWS
         if (!context.Reviews.Any())
         {
             context.Reviews.AddRange(

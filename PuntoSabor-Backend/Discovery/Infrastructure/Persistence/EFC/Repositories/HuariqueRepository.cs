@@ -5,9 +5,11 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 namespace PuntoSabor_Backend.Discovery.Infrastructure.Persistence.EFC.Repositories;
 
-/// <summary>
-/// Implementación del repositorio de huariques con búsqueda, consulta y actualización parcial.
-/// </summary>
+/**
+ * <summary>
+ *     Repositorio de huariques con búsqueda, consulta por id y actualización parcial.
+ * </summary>
+ */
 
 public class HuariqueRepository(AppDbContext context) : IHuariqueRepository
 {

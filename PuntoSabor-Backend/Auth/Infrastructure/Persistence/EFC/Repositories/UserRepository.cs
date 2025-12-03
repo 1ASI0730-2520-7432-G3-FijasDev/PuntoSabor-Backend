@@ -5,9 +5,12 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 namespace PuntoSabor_Backend.Auth.Infrastructure.Persistence.EFC.Repositories;
 
-/// <summary>
-/// Implementación del repositorio de usuarios usando Entity Framework.
-/// </summary>
+/**
+ * <summary>
+ *     Implementación del repositorio de usuarios utilizando Entity Framework Core.
+ *     Permite buscar usuarios por correo y registrar nuevos usuarios en la base de datos.
+ * </summary>
+ */
 
 public class UserRepository(AppDbContext context) : IUserRepository
 {

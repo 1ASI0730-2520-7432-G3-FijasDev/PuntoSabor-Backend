@@ -8,10 +8,12 @@ namespace PuntoSabor_Backend.Presentation.Controllers;
 [Route("promos")]
 public class PromosController(IPromoRepository promos) : ControllerBase
 {
-    /// <summary>
-    /// Devuelve la lista de promociones.
-    /// GET /promos
-    /// </summary>
+    /**
+     * <summary>
+     *     Devuelve la lista de promociones.
+     *     GET /promos
+     * </summary>
+     */
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Promo>>> GetAll(CancellationToken ct)
     {

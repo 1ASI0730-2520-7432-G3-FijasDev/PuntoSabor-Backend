@@ -8,10 +8,12 @@ namespace PuntoSabor_Backend.Presentation.Controllers;
 [Route("categories")]
 public class CategoriesController(ICategoryRepository categories) : ControllerBase
 {
-    /// <summary>
-    /// Devuelve todas las categorías de huariques.
-    /// GET /categories
-    /// </summary>
+    /**
+     * <summary>
+     *     Devuelve todas las categorías de huariques.
+     *     GET /categories
+     * </summary>
+     */
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Category>>> GetAll(CancellationToken ct)
     {

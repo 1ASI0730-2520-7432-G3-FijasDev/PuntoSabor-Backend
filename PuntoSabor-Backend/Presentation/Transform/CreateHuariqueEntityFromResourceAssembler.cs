@@ -3,6 +3,12 @@ using PuntoSabor_Backend.Presentation.Resources;
 
 namespace PuntoSabor_Backend.Presentation.Transform;
 
+/**
+ * <summary>
+ *     Convierte un recurso de creación de huarique en una entidad Huarique.
+ * </summary>
+ */
+
 public static class CreateHuariqueEntityFromResourceAssembler
 {
     public static Huarique ToEntityFromResource(CreateHuariqueResource resource)

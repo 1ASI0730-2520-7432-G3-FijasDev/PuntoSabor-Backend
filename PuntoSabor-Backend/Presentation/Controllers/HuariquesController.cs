@@ -16,9 +16,11 @@ public class HuariquesController(
     IHuariqueRepository huariques,
     IUnitOfWork unitOfWork) : ControllerBase
 {
-    /// <summary>
-    /// Busca huariques por texto y/o cercanos.
-    /// </summary>
+    /**
+     * <summary>
+     *     Busca huariques por texto y/o cercanos.
+     * </summary>
+     */
     
     [HttpGet]
     [SwaggerOperation("Search Huariques", "Search huariques by text and/or near filter.", OperationId = "SearchHuariques")]
@@ -51,10 +53,12 @@ public class HuariquesController(
         return Ok(resources);
     }
 
-    /// <summary>
-    /// Devuelve el detalle de un huarique por id.
-    /// GET /huariques/:id
-    /// </summary>
+    /**
+     * <summary>
+     *     Devuelve el detalle de un huarique por id.
+     *     GET /huariques/:id
+     * </summary>
+     */
     
     [HttpGet("{id:int}")]
     [SwaggerOperation("Get Huarique by Id", "Get a huarique by its unique identifier.", OperationId = "GetHuariqueById")]
@@ -69,6 +73,12 @@ public class HuariquesController(
         return Ok(resource);
     }
 
+    /**
+    * <summary>
+    *     Crea un nuevo huarique.
+    * </summary>
+    */
+    
     [HttpPost]
     [Consumes(MediaTypeNames.Application.Json)]
     [SwaggerOperation("Create Huarique", "Create a new huarique.", OperationId = "CreateHuarique")]
@@ -100,9 +110,12 @@ public class HuariquesController(
         return CreatedAtAction(nameof(GetById), new { id = entity.Id }, createdResource);
     }
 
-    /// <summary>
-    /// PATCH /huariques/:id
-    /// </summary>
+    /**
+     * <summary>
+     *     Actualiza parcialmente un huarique.
+     *     PATCH /huariques/:id
+     * </summary>
+     */
     
     [HttpPatch("{id:int}")]
     [Consumes(MediaTypeNames.Application.Json)]
