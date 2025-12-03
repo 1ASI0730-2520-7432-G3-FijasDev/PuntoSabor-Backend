@@ -2,10 +2,12 @@ using PuntoSabor_Backend.Shared.Domain.Model;
 
 namespace PuntoSabor_Backend.Discovery.Domain.Model;
 
-/// <summary>
-/// Huarique registrado en el sistema con categoría, precio y ubicación.
-/// </summary>
-
+/**
+ * <summary>
+ *     Representa un huarique dentro del sistema, incluyendo su categoría,
+ *     precio, ubicación, calificación y datos de auditoría heredados.
+ * </summary>
+ */
 public class Huarique : AuditableEntity
 {
     public string Name { get; set; } = null!;

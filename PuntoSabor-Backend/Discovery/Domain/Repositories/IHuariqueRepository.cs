@@ -2,9 +2,11 @@ using PuntoSabor_Backend.Discovery.Domain.Model;
 
 namespace PuntoSabor_Backend.Discovery.Domain.Repositories;
 
-/// <summary>
-/// Repositorio para buscar, obtener y gestionar huariques.
-/// </summary>
+/**
+ * <summary>
+ *     Repositorio para buscar, obtener y gestionar huariques dentro del sistema.
+ * </summary>
+ */
 
 public interface IHuariqueRepository
 {

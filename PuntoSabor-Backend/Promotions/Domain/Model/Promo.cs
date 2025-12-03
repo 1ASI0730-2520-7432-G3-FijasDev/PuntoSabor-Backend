@@ -2,9 +2,11 @@ using PuntoSabor_Backend.Shared.Domain.Model;
 
 namespace PuntoSabor_Backend.Promotions.Domain.Model;
 
-/// <summary>
-/// Promoción registrada en el sistema con título y nota.
-/// </summary>
+/**
+ * <summary>
+ *     Promoción registrada en el sistema con título y nota.
+ * </summary>
+ */
 
 
 public class Promo : AuditableEntity

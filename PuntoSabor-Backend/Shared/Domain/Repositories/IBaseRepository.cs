@@ -1,9 +1,10 @@
 namespace PuntoSabor_Backend.Shared.Domain.Repositories;
 
-/// <summary>
-/// Contrato genérico para listar y agregar entidades.
-/// </summary>
-
+/**
+ * <summary>
+ *     Contrato genérico para listar y agregar entidades.
+ * </summary>
+ */
 public interface IBaseRepository<T> where T : class
 {
     

@@ -3,6 +3,13 @@ using PuntoSabor_Backend.Presentation.Resources;
 
 namespace PuntoSabor_Backend.Presentation.Transform;
 
+/**
+ * <summary>
+ *     Convierte una entidad Huarique en su recurso de respuesta.
+ * </summary>
+ */
+
+
 public static class HuariqueResourceFromEntityAssembler
 {
     public static HuariqueResource ToResourceFromEntity(Huarique entity) =>

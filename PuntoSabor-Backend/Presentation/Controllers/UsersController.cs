@@ -8,6 +8,11 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace PuntoSabor_Backend.Presentation.Controllers;
 
+/**
+ * <summary>
+ *     Controlador para buscar y crear usuarios.
+ * </summary>
+ */
 [ApiController]
 [Route("users")]
 [Produces(MediaTypeNames.Application.Json)]
@@ -16,7 +21,12 @@ public class UsersController(
     IUserRepository users,
     IUnitOfWork unitOfWork) : ControllerBase
 {
-    /// GET /users?email=demo@puntosabor.com
+    /**
+     * <summary>
+     *     GET /users?email=demo@puntosabor.com
+     *     Busca usuarios filtrando por email.
+     * </summary>
+     */
     [HttpGet]
     [SwaggerOperation("Search Users", "Search users by email filter.", OperationId = "SearchUsers")]
     [SwaggerResponse(200, "Usuarios encontrados y retornados.", typeof(IEnumerable<UserResource>))]
@@ -51,7 +61,12 @@ public class UsersController(
         return Ok(resources);
     }
 
-    /// POST /users
+    /**
+     * <summary>
+     *     Crea un nuevo usuario.
+     *     POST /users
+     * </summary>
+     */
     [HttpPost]
     [Consumes(MediaTypeNames.Application.Json)]
     [SwaggerOperation("Create User", "Create a new user.", OperationId = "CreateUser")]

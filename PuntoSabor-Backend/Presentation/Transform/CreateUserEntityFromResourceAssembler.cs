@@ -3,6 +3,13 @@ using PuntoSabor_Backend.Presentation.Resources;
 
 namespace PuntoSabor_Backend.Presentation.Transform;
 
+/**
+ * <summary>
+ *     Convierte un recurso de creación de usuario en una entidad User.
+ * </summary>
+ */
+
+
 public static class CreateUserEntityFromResourceAssembler
 {
     public static User ToEntityFromResource(CreateUserResource resource)

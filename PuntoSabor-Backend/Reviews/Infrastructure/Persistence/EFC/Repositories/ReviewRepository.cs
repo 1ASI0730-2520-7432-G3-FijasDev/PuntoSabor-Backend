@@ -5,9 +5,11 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 namespace PuntoSabor_Backend.Reviews.Infrastructure.Persistence.EFC.Repositories;
 
-/// <summary>
-/// Implementación del repositorio de reseñas con filtros y ordenamiento.
-/// </summary>
+/**
+ * <summary>
+ *     Implementación del repositorio de reseñas con filtros y ordenamiento.
+ * </summary>
+ */
 
 public class ReviewRepository(AppDbContext context) : IReviewRepository
 {

@@ -8,10 +8,12 @@ namespace PuntoSabor_Backend.Presentation.Controllers;
 [Route("plans")]
 public class PlansController(IPlanRepository plans) : ControllerBase
 {
-    /// <summary>
-    /// Devuelve la lista de planes de membresía.
-    /// GET /plans
-    /// </summary>
+    /**
+     * <summary>
+     *     Devuelve la lista de planes de membresía.
+     *     GET /plans
+     * </summary>
+     */
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Plan>>> GetAll(CancellationToken ct)
     {

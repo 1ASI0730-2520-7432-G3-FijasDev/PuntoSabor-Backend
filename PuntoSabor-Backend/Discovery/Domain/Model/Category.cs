@@ -2,10 +2,12 @@ using PuntoSabor_Backend.Shared.Domain.Model;
 
 namespace PuntoSabor_Backend.Discovery.Domain.Model;
 
-/// <summary>
-/// Entidad base con Id, marcas de creación y actualización.
-/// </summary>
-
+/**
+ * <summary>
+ *     Representa una categoría de huariques dentro del módulo Discovery.
+ *     Cada categoría hereda propiedades auditables como Id, CreatedAt y UpdatedAt.
+ * </summary>
+ */
 
 public class Category : AuditableEntity
 {

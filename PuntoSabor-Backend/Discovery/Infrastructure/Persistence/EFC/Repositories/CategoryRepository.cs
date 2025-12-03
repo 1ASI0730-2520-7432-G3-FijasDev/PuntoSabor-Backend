@@ -5,10 +5,11 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 namespace PuntoSabor_Backend.Discovery.Infrastructure.Persistence.EFC.Repositories;
 
-/// <summary>
-/// Implementación del repositorio de categorías usando Entity Framework.
-/// </summary>
-
+/**
+ * <summary>
+ *     Implementación del repositorio de categorías utilizando Entity Framework Core.
+ * </summary>
+ */
 public class CategoryRepository(AppDbContext context) : ICategoryRepository
 {
     
