@@ -7,6 +7,10 @@ using PuntoSabor_Backend.Reviews.Domain.Model;
 
 namespace PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
+/// <summary>
+/// Contexto principal de EF Core con las tablas del sistema.
+/// </summary>
+
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -15,10 +19,15 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+    
     public DbSet<Category> Categories { get; set; }
+    
     public DbSet<Huarique> Huariques { get; set; }
+    
     public DbSet<Promo> Promos { get; set; }
+    
     public DbSet<Plan> Plans { get; set; }
+    
     public DbSet<Review> Reviews { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

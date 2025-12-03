@@ -65,7 +65,9 @@ using (var scope = app.Services.CreateScope())
     db.Database.EnsureCreated();
 
     Console.WriteLine(">>> Ejecutando DataSeeder...");
+    
     DataSeeder.Seed(db);
+    
     Console.WriteLine(">>> DataSeeder terminado.");
 }
 

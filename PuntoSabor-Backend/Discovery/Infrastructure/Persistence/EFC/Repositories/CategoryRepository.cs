@@ -5,9 +5,15 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 namespace PuntoSabor_Backend.Discovery.Infrastructure.Persistence.EFC.Repositories;
 
+/// <summary>
+/// Implementación del repositorio de categorías usando Entity Framework.
+/// </summary>
+
 public class CategoryRepository(AppDbContext context) : ICategoryRepository
 {
+    
     public async Task<IEnumerable<Category>> ListAsync(CancellationToken ct = default)
+    
     {
         return await context.Categories.AsNoTracking().ToListAsync(ct);
     }

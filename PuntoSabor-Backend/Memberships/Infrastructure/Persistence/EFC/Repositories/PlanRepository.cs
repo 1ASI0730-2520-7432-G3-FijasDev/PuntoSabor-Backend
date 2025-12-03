@@ -5,9 +5,15 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 namespace PuntoSabor_Backend.Memberships.Infrastructure.Persistence.EFC.Repositories;
 
+/// <summary>
+/// Implementación del repositorio de planes usando Entity Framework.
+/// </summary>
+
 public class PlanRepository(AppDbContext context) : IPlanRepository
 {
+    
     public async Task<IEnumerable<Plan>> ListAsync(CancellationToken ct = default)
+    
     {
         return await context.Plans.AsNoTracking().ToListAsync(ct);
     }
