@@ -8,6 +8,10 @@ using PuntoSabor_Backend.Reviews.Domain.Model;
 
 namespace PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
+/// <summary>
+/// Pobla la base de datos con datos iniciales para prueba y demo.
+/// </summary>
+
 public static class DataSeeder
 {
     public static void Seed(AppDbContext context)

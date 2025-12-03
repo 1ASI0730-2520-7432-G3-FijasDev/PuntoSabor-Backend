@@ -7,6 +7,10 @@ using PuntoSabor_Backend.Reviews.Domain.Model;
 
 namespace PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
+/// <summary>
+/// Contexto principal de EF Core con las tablas del sistema.
+/// </summary>
+
 public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
