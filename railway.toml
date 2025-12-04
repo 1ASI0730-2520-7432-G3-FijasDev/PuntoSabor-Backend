@@ -1,5 +1,5 @@
 [build]
-builder = "railway-buildpacks"
+nixpacks = true
 
 [deploy]
 start = "dotnet PuntoSabor-Backend.dll"
