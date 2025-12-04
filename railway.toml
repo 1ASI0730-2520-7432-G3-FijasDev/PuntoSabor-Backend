@@ -1,11 +1,7 @@
 [build]
-nixpacks = true
-
-[build.args]
-NIXPACKS_ROOT = "PuntoSabor-Backend"
+builder = "railwaycommunity/dotnet-sdk"
+buildCommand = "dotnet publish -c Release -o out"
 
 [deploy]
-start = "dotnet PuntoSabor-Backend.dll"
-healthcheckPath = "/"
-restartPolicyType = "on_failure"
-restartPolicyMaxRetries = 10
+startCommand = "dotnet out/PuntoSabor-Backend.dll"
+restartPolicyType = "always"
