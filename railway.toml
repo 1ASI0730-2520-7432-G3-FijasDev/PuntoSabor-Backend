@@ -1,6 +1,9 @@
 [build]
 nixpacks = true
 
+[build.args]
+NIXPACKS_ROOT = "PuntoSabor-Backend"
+
 [deploy]
 start = "dotnet PuntoSabor-Backend.dll"
 healthcheckPath = "/"
