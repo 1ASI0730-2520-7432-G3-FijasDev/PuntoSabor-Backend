@@ -14,6 +14,14 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Debug: variables Railway
+Console.WriteLine(">>> ENV DB_HOST: " + Environment.GetEnvironmentVariable("DB_HOST"));
+Console.WriteLine(">>> ENV DB_PORT: " + Environment.GetEnvironmentVariable("DB_PORT"));
+Console.WriteLine(">>> ENV DB_NAME: " + Environment.GetEnvironmentVariable("DB_NAME"));
+Console.WriteLine(">>> ENV DB_USER: " + Environment.GetEnvironmentVariable("DB_USER"));
+Console.WriteLine(">>> ENV DB_PASSWORD: " + Environment.GetEnvironmentVariable("DB_PASSWORD"));
+
+// Build connection string
 var connectionString =
     $"server={Environment.GetEnvironmentVariable("DB_HOST")};" +
     $"port={Environment.GetEnvironmentVariable("DB_PORT")};" +
@@ -21,7 +29,7 @@ var connectionString =
     $"user={Environment.GetEnvironmentVariable("DB_USER")};" +
     $"password={Environment.GetEnvironmentVariable("DB_PASSWORD")}";
 
-// DbContext: MySQL
+// DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseMySQL(connectionString!);
@@ -30,7 +38,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Unit of Work
 builder.Services.AddScoped<IUnitOfWork, AppUnitOfWork>();
 
-// Repositorios
+// Repositories
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IHuariqueRepository, HuariqueRepository>();
 builder.Services.AddScoped<IPlanRepository, PlanRepository>();
@@ -55,8 +63,8 @@ builder.Services.AddCors(options =>
     {
         policy
             .WithOrigins(
-                "http://localhost:5173",         
-                " https://puntosabor.netlify.app" 
+                "http://localhost:5173",
+                "https://puntosabor.netlify.app"     // ← FIX
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
@@ -85,7 +93,7 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-// Swagger
+// Swagger (dev only)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -93,11 +101,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors(corsPolicyName);
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
