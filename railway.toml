@@ -1,0 +1,8 @@
+[build]
+builder = "railway-buildpacks"
+
+[deploy]
+start = "dotnet PuntoSabor-Backend.dll"
+healthcheckPath = "/"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
