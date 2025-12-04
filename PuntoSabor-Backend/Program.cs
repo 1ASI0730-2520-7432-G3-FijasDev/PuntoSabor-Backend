@@ -64,12 +64,13 @@ builder.Services.AddCors(options =>
         policy
             .WithOrigins(
                 "http://localhost:5173",
-                "https://puntosabor.netlify.app"     // ← FIX
+                "https://frontend-punto-sabor.vercel.app"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
+
 
 var app = builder.Build();
 
