@@ -14,9 +14,14 @@ using PuntoSabor_Backend.Shared.Infrastructure.Persistence.EFC;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// DbContext: MySQL
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString =
+    $"server={Environment.GetEnvironmentVariable("DB_HOST")};" +
+    $"port={Environment.GetEnvironmentVariable("DB_PORT")};" +
+    $"database={Environment.GetEnvironmentVariable("DB_NAME")};" +
+    $"user={Environment.GetEnvironmentVariable("DB_USER")};" +
+    $"password={Environment.GetEnvironmentVariable("DB_PASSWORD")}";
 
+// DbContext: MySQL
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseMySQL(connectionString!);
@@ -43,14 +48,16 @@ builder.Services.AddSwaggerGen(c =>
     c.EnableAnnotations();
 });
 
-// CORS para el frontend en Vite
 const string corsPolicyName = "PuntoSaborCors";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(corsPolicyName, policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173")
+            .WithOrigins(
+                "http://localhost:5173",         
+                " https://puntosabor.netlify.app" 
+            )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -60,15 +67,22 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    try
+    {
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-    db.Database.EnsureCreated();
+        Console.WriteLine(">>> Verificando base de datos...");
+        db.Database.EnsureCreated();
 
-    Console.WriteLine(">>> Ejecutando DataSeeder...");
-    
-    DataSeeder.Seed(db);
-    
-    Console.WriteLine(">>> DataSeeder terminado.");
+        Console.WriteLine(">>> Ejecutando DataSeeder...");
+        DataSeeder.Seed(db);
+        Console.WriteLine(">>> DataSeeder terminado.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(">>> ERROR AL CONECTAR A MYSQL EN STARTUP:");
+        Console.WriteLine(ex.Message);
+    }
 }
 
 // Swagger
